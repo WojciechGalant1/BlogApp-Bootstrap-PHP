@@ -13,67 +13,7 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="bts_style.css">
-    
-
-<!-- alert -->
-
-<script>
-        // Sprawdź, czy istnieje zmienna sesyjna z informacją o błędzie
-        <?php if (isset($_SESSION['login_error'])) : ?>
-            // Wyświetl alert z informacją o błędzie
-            alert('<?php echo $_SESSION['login_error']; ?>');
-
-            // Usuń zmienną sesyjną
-            <?php unset($_SESSION['login_error']); ?>
-        <?php endif; ?>
-    </script>
-
-    <!-- rozwijanie -->
-    <script>
-        function toggleContent(id) {
-            var content = document.getElementById("content-" + id);
-            if (content.style.display === "none") {
-                content.style.display = "block";
-            } else {
-                content.style.display = "none";
-            }
-        }
-    </script>
-    <!-- data i godzina -->
-    <script>
-        function updateDateTime() {
-            const now = new Date();
-            const formattedDateTime = now.toLocaleDateString('pl-PL', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
-            });
-
-            document.getElementById('date-time').innerText = formattedDateTime;
-        }
-
-        setInterval(updateDateTime, 1000);
-    </script>
-<!-- alert -->
-<script>
-    function validateForm() {
-        var login = document.getElementById('login').value;
-        var haslo = document.getElementById('haslo').value;
-
-        if (login === '' || haslo === '') {
-            alert('Proszę wprowadzić login i hasło');
-            return false; 
-        }
-        
-
-        return true; 
-    }
-</script>
-
-
+    <script src="script.js"></script>
 </head>
 
 <body>
